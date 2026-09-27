@@ -7,7 +7,7 @@ const ConnectDB = async () => {
     await mongoose.connect(process.env.CONNECTION_STRING);
     console.log("Đã kết nối với database thành công!");
   } catch (err) {
-    console.error("Kết nối database không thành công!", err);
+    console.error("Kết nối database không thành công!\n", err);
     process.exit(1);
   }
 };

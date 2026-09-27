@@ -29,7 +29,7 @@ const userSchema = new Schema({
     enum: ["customer", "seller", "admin"],
     default: "customer",
   },
-});
+}, { timestamps: true });
 
 const User = model("User", userSchema);
 export default User;
