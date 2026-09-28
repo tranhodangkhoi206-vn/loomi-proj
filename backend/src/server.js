@@ -6,7 +6,7 @@ import authRoute from "./routes/authRoute.js";
 import userRoute from "./routes/user/userRoute.js";
 // import jsonparser from "jsonparser";
 
-// dns.setServers(["8.8.8.8"], ["8.8.4.4"]);
+dns.setServers(["8.8.8.8"], ["8.8.4.4"]);
 
 config();
 const PORT = process.env.PORT || 5001;
