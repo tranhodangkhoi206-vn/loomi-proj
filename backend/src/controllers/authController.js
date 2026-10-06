@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 
-export const signup = async (req, res) => {
+export const register = async (req, res) => {
   try {
     const { username, password, email, displayName } = req.body;
     if (!username || !password || !email || !displayName) {
@@ -42,7 +42,7 @@ export const signup = async (req, res) => {
   }
 };
 
-export const signin = async (req, res) => {
+export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const userInfo = await User.findOne({ email });
@@ -92,7 +92,7 @@ export const signin = async (req, res) => {
       .json({ success: false, message: "Đăng nhập không thành công" });
   }
 };
-export const signOut = (req, res) => {
+export const logout = (req, res) => {
   try {
     const refreshToken = req.cookies?.refreshToken;
     if (refreshToken) {
